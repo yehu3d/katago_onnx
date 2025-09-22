@@ -240,10 +240,10 @@ struct ComputeHandle {
       throw StringError("TensorRT backend: failed to parse ONNX model");
     }
     profile->setDimensions("input_spatial", OptProfileSelector::kMIN, Dims4(1, 22, 19, 19));
-    profile->setDimensions("input_spatial", OptProfileSelector::kOPT, Dims4(maxBatchSize/2, 22, 19, 19));
+    profile->setDimensions("input_spatial", OptProfileSelector::kOPT, Dims4(maxBatchSize, 22, 19, 19));
     profile->setDimensions("input_spatial", OptProfileSelector::kMAX, Dims4(maxBatchSize, 22, 19, 19));
     profile->setDimensions("input_global", OptProfileSelector::kMIN, Dims2(1, 19));
-    profile->setDimensions("input_global", OptProfileSelector::kOPT, Dims2(maxBatchSize/2, 19));
+    profile->setDimensions("input_global", OptProfileSelector::kOPT, Dims2(maxBatchSize, 19));
     profile->setDimensions("input_global", OptProfileSelector::kMAX, Dims2(maxBatchSize, 19));
 
     if(builder->platformHasFastFp16()) {
