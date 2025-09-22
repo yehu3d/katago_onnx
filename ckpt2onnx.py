@@ -7,6 +7,7 @@ import torch.optim
 import torch.distributed
 import torch.multiprocessing
 from load_model import load_model, load_model_state_dict
+#python ckpt2onnx.py --i_ckpt 28bnbt.ckpt --o_onnx 28bnbt.onnx
 
 class PrunedModel(torch.nn.Module):
     def __init__(self, original_model):
