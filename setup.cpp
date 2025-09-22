@@ -243,16 +243,6 @@ vector<NNEvaluator*> Setup::initializeNNEvaluators(
     else if(cfg.contains("useFP16"))
       useFP16Mode = cfg.getEnabled("useFP16");
 
-    enabled_t useInt8Mode = enabled_t::False;
-    if(cfg.contains(backendPrefix + "UseInt8-" + idxStr))
-      useInt8Mode = cfg.getEnabled(backendPrefix + "UseInt8-" + idxStr);
-    else if(cfg.contains("useInt8-" + idxStr))
-      useInt8Mode = cfg.getEnabled("useInt8-" + idxStr);
-    else if(cfg.contains(backendPrefix + "UseInt8"))
-      useInt8Mode = cfg.getEnabled(backendPrefix + "UseInt8");
-    else if(cfg.contains("useInt8"))
-      useInt8Mode = cfg.getEnabled("useInt8");
-
     enabled_t useNHWCMode = enabled_t::Auto;
     if(cfg.contains(backendPrefix+"UseNHWC"+idxStr))
       useNHWCMode = cfg.getEnabled(backendPrefix+"UseNHWC"+idxStr);
@@ -270,7 +260,6 @@ vector<NNEvaluator*> Setup::initializeNNEvaluators(
     logger.write(
       "After dedups: nnModelFile" + idxStr + " = " + nnModelFile
       + " useFP16 " + useFP16Mode.toString()
-      + " useInt8 " + useInt8Mode.toString()
       + " useNHWC " + useNHWCMode.toString()
     );
 
