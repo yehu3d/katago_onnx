@@ -304,7 +304,7 @@ struct ComputeHandle {
 
 #ifdef CACHE_TENSORRT_PLAN
       auto planCacheFile = Global::strprintf(
-        "%s/trt-%d_gpu-%s_net-%s_%s%dx%d_batch%d_fp%d%s",
+        "%s/trt-%d_gpu-%s_net-%s_%s%dx%d_batch%d_fp%d",
         cacheDir.c_str(),
         getInferLibVersion(),
         deviceIdent,
