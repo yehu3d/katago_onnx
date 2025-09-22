@@ -65,7 +65,6 @@ namespace NeuralNet {
     const std::string& onnxfile,
     bool openCLReTunePerBoardSize,
     enabled_t useFP16Mode,
-    enabled_t useInt8Mode,
     enabled_t useNHWCMode,
     const LoadedModel* loadedModel
   );
