@@ -95,7 +95,6 @@ class NNEvaluator {
     const std::string& homeDataDirOverride,
     bool openCLReTunePerBoardSize,
     enabled_t useFP16Mode,
-    enabled_t useInt8Mode,
     enabled_t useNHWCMode,
     int numThreads,
     const std::vector<int>& gpuIdxByServerThread,
@@ -194,7 +193,6 @@ class NNEvaluator {
   const int policySize;
   const bool inputsUseNHWC;
   const enabled_t usingFP16Mode;
-  const enabled_t usingInt8Mode;
   const enabled_t usingNHWCMode;
   int numThreads;
   std::vector<int> gpuIdxByServerThread;
