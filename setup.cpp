@@ -326,7 +326,6 @@ vector<NNEvaluator*> Setup::initializeNNEvaluators(
       homeDataDirOverride,
       openCLReTunePerBoardSize,
       useFP16Mode,
-      useInt8Mode,
       useNHWCMode,
       numNNServerThreadsPerModel,
       gpuIdxByServerThread,
